@@ -37,7 +37,7 @@ Widget.Header = styled.div`
 `;
 
 Widget.Content = styled.div`
-  padding: 24px 32px 32px;
+  padding: 24px 32px 24px;
   & > *:first-child {
     margin-top: 0;
   }
@@ -57,41 +57,32 @@ Widget.Content = styled.div`
     margin: 0 0 24px 0;
     line-height: 16.8px;
   }
+`;
 
-  form input {
-    border: 1px solid ${({ theme }) => theme.colors.primary};
-    background-color: ${({ theme }) => theme.colors.mainBg};
-    width: 100%;
-    padding: 8px 15px;
-    outline: 0;
-    color: #FFF;
-    border-radius: 4px; 
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}`};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: .2s;
+  display: block;
+  color: #EEE;
+  
+  &:hover,
+  &:focus {
+    opacity: .8;
   }
 
-  form button {
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    height: 36px;
-    border: 0;
-    border-radius: 4px;
-    letter-spacing: 2px;
-    color: #FFF;
-    font: 700 14px Lato;
-    background: ${({ theme }) => theme.colors.button};
-    transition: background 0.2s;
+  & + button {
+    margin-top: 10px;
   }
 
-  form button:disabled {
-    background: gray;
-  }
-
-  form button:disabled:hover {
-    background: gray;
-  }
-
-  form button:hover {
-    background: ${({ theme }) => theme.colors.button_hover};
+  input[type=radio] {
+    margin: 0 10px 0 0;
   }
 `;
 
