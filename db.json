@@ -1,6 +1,5 @@
 {
-  "bg": "https://images6.alphacoders.com/451/thumb-1920-451608.jpg",
-  "bg2": "https://images7.alphacoders.com/418/thumb-1920-418724.png",
+  "bg": "https://images7.alphacoders.com/418/thumb-1920-418724.png",
   "title": "Quiz CSS da Alura",
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
@@ -15,10 +14,23 @@
         "Maria, Rose e Sina",
         "Sina, Maria e Rose"
       ]
+    },
+    {
+      "image": "https://i.pinimg.com/originals/73/aa/43/73aa436ce1f183be3a7bb5712d6f631b.jpg",
+      "title": "Quantos anos eren, mikasa e armin tinham quando a muralha foi derrubada pelo titã colossal em 845?",
+      "description": "Lembra dessa?",
+      "answer": 0,
+      "alternatives": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ]
     }
   ],
   "external": [
-    ""
+    "https://aluraquiz-css.omariosouto.vercel.app/",
+    "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
   ],
   "theme": {
     "colors": {

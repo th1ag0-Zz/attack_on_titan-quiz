@@ -25,7 +25,7 @@ function Input({
       placeholder={placeholder}
       name={name}
       value={value}
-      autocomplete="off"
+      autoComplete="off"
     />
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
 import db from '../db.json';
@@ -11,6 +12,7 @@ import QuizLogo from '../src/components/QuizLogo';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer';
+import Link from '../src/components/Link';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -26,7 +28,7 @@ export default function Home() {
   const router = useRouter();
   const [name, setName] = useState('');
   return (
-    <QuizBackground backgroundImage={db.bg2}>
+    <QuizBackground backgroundImage={db.bg}>
       <Head>
         <title>Attack On Titan - Quiz</title>
       </Head>
@@ -34,7 +36,16 @@ export default function Home() {
       <QuizContainer>
         <QuizLogo />
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ duration: 0.2 }}
+          variants={{
+            show: { opacity: 1, rotate: 0, scale: 1 },
+            hidden: { opacity: 0, rotate: 50, scale: 0.9 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
 
           <Widget.Header>
             <h1>Attack on Titan</h1>
@@ -61,11 +72,36 @@ export default function Home() {
 
         </Widget>
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.2 }}
+          variants={{
+            show: { opacity: 1, rotate: 0, scale: 1 },
+            hidden: { opacity: 0, rotate: 50, scale: 0.9 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Content>
             <h1>Quizes da gelera</h1>
 
-            <p>Lorem ipsum is dolor...</p>
+            <ul>
+              {db.external.map((item) => {
+                const [projectName, user] = item
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+
+                return (
+                  <li key={item}>
+                    <Widget.Topic as={Link} href={`/quiz/${projectName}___${user}`}>
+                      {`${user}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
         { /* <Footer /> */ }
@@ -74,5 +110,3 @@ export default function Home() {
     </QuizBackground>
   );
 }
-
-// 00:20:00

@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
-import db from '../db.json';
-import Widget from '../src/components/Widget';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizLogo from '../src/components/QuizLogo';
-import Button from '../src/components/Button';
-import QuizContainer from '../src/components/QuizContainer';
-import AlternativesForm from '../src/components/AlternativesForm';
+import Widget from '../../components/Widget';
+import QuizBackground from '../../components/QuizBackground';
+import QuizLogo from '../../components/QuizLogo';
+import Button from '../../components/Button';
+import QuizContainer from '../../components/QuizContainer';
+import AlternativesForm from '../../components/AlternativesForm';
+import BackLinkArrow from '../../components/BackLinkArrow';
 
 function LoadingWidget() {
   return (
@@ -71,6 +71,7 @@ function QuestionWidget({
     <Widget>
 
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h3>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>
@@ -149,12 +150,13 @@ function QuestionWidget({
   );
 }
 
-export default function QuizPage() {
-  const totalQuestions = db.questions.length;
+export default function QuizScreen({ externalQuestions, externalBg }) {
+  const totalQuestions = externalQuestions.length;
   const [questionIndex, setQuestionIndex] = useState(0);
-  const question = db.questions[questionIndex];
+  const question = externalQuestions[questionIndex];
   const [screenState, setScreenState] = useState('LOADING');
   const [results, setResults] = useState([]);
+  const bg = externalBg;
 
   function addResult(result) {
     setResults([
@@ -179,7 +181,7 @@ export default function QuizPage() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg2}>
+    <QuizBackground backgroundImage={bg}>
       <Head>
         <title>Attack On Titan - Quiz</title>
       </Head>
@@ -207,5 +209,3 @@ export default function QuizPage() {
     </QuizBackground>
   );
 }
-
-// 01:07:00
