@@ -44,6 +44,11 @@ Widget.Content = styled.div`
   & > *:last-child {
     margin-bottom: 0;
   }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
   ul {
     list-style: none;
     padding: 0;
@@ -53,9 +58,20 @@ Widget.Content = styled.div`
     width: 100%;
   }
 
-  form p {
+  form > p {
     margin: 0 0 24px 0;
     line-height: 16.8px;
+  }
+
+  button + p {
+    margin: 20px 0 0 0;
+    font-size: 16px;
+  }
+
+  a > button {
+    letter-spacing: 0;
+    font-size: 16px;
+    font-weight: bold;
   }
 `;
 

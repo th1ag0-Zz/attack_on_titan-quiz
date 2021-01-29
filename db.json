@@ -5,28 +5,6 @@
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
-      "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
-      "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
-      ]
-    },
-    {
       "image": "https://i.pinimg.com/originals/58/f2/a8/58f2a885a656acd6537492b91e3639fd.png",
       "title": "Qual o nome das três Muralhas de dentro pra fora?",
       "description": "Só pra aquecer",
@@ -45,10 +23,10 @@
   "theme": {
     "colors": {
       "primary": "#B85B33",
-      "secondary": "#461A0E",
+      "secondary": "#FF5722",
       "mainBg": "#1c1c1f",
       "contrastText": "#1B3D63",
-      "wrong": "#FF5722",
+      "wrong": "#2e110a",
       "success": "#4CAF50",
       "button": "#127780",
       "button_hover": "#17a1ad"
